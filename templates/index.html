@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="forest">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://res.cloudinary.com/veseylab/raw/upload/v1613706377/magicmouse/magic-mouse-1.1.css" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1/dist/tailwind.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@1.11.0/dist/full.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+    <form action="" method="post" id="form">
+        <!-- Nav Bar -->
+        <div class="navbar mb-2 shadow-lg bg-neutral text-neutral-content rounded-box">
+            <div class="flex-1 px-2 mx-2 block">
+            <span class="text-lg md:text-2xl font-bold ">
+                    Ooshimus.com
+                    </span>
+            </div>
+
+            <br>
+            <div class="flex-none hidden px-2 mx-2 lg:flex">
+
+                <!-- Max Tokens Input TEST THIS FOR THE NUMBER-->
+                <div class="form-control h-10 mr-5" >
+                    <input type="number" step="1" placeholder="Max Tokens - 40" class="input input-bordered" name="maxTokens">
+                </div>
+
+                <!-- Temp Input -->
+                <div class="form-control h-10 mr-5">
+                    <input type="number" step="0.01" placeholder="Temperature - 0.09" class="input input-bordered" name="temperature">
+                </div>
+                
+                <!-- Max Probability -->
+                <div class="form-control h-10 mr-5">
+                    <input type="number" step="0.1" placeholder="Max Probability - 1.0" class="input input-bordered" name="probability">
+                </div>
+
+                <!-- Question Mark Button -->
+                <a href="/#my-modal" class="btn btn-square btn-ghost magic-hover">?</a> 
+                <div id="my-modal" class="modal">
+                <div class="modal-box">
+                    <h1 class="text-xl font-bold">Help</h1>
+                    <br>
+                    <h1 class="text-lg font-semibold">Prompt</h1>
+                    <p>The Prompt that you want to give the model, put this into the box below. Click guide for more on how to make a meaningful prompt</p>
+
+                    <br>
+
+                    <h1 class="text-lg font-semibold">Token</h1>
+                    <p>Recommended max amount of tokens is 2048, this is the maximum output length in characters including spaces. </p>
+
+                    <br>
+
+                    <h1 class="text-lg font-semibold">Temperature</h1>
+                    <p>Controls how random the model is, recommended setting > 1.0 <br> A higher temperature means more creativity and a low temperature means less changes will be made when completing the prompt.<br> Value <strong>must</strong> be a float</p>
+
+                    <br>
+
+                    <!-- Add some error handling here, so that one must be equal to one -->
+
+                    <h1 class="text-lg font-semibold">Probability</h1>
+                    <p>An alternative method to setting the creativity.<br> <strong> If the temperature is set then probability must equal 1, vice-vera.</strong> </p>
+
+                    <br>
+
+                    <h3 class="text-sm font-bold">Created by Aiyush Gupta</h3>
+
+                    If you would like to purchase this project please reach out on <a target="_blank" href="https://www.linkedin.com/in/aiyush-gupta-2006/" class="link link-accent magic-hover magic-hover__square">Linkedin</a>
+
+
+
+                    <div class="modal-action">
+                    <a href="/" class="btn btn-primary">Read Blog Post</a> 
+                    <a href="/" class="btn">Ok</a>
+                    </div>
+                </div>
+                </div>
+
+                <!-- Ooshimus Code Link -->
+                <a href="https://ooshimus.com" target="_blank" class="btn btn-square btn-ghost magic-hover">            
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 stroke-current text-success">   
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>                          
+                    </svg> 
+                </a>
+            </div>
+        </div>
+
+        <!-- Notification -->
+        <div class="alert alert-warning mt-5 container mx-auto">
+            <div>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="w-6 h-6 mx-2 stroke-current"> 
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>                         
+            </svg> 
+            <label>I'm still in beta, if you have feedback please comment <a target="_blank" href="https://ooshimus.com" class="link link-accent magic-hover magic-hover__square">here!</a></label>
+            </div>
+        </div>
+
+        <div class="container mx-auto px-10 md:px-30 lg:40">
+
+            
+            <!-- Title-->
+            <h1 class="text-center text-2xl font-semibold p-8 md:p-16 lg:text-4xl 2xl:text-5xl">Python Code Generator v0.1</h1>
+            <!-- Form -->
+            <div class="form-control">
+                <label class="label">
+                    <span class="label-text text-xl"></span> <!-- Label if needed-->
+                </label> 
+                <div class="relative">
+                <input type="text" placeholder="Search" class="w-full pr-16 input input-primary input-bordered" name="search"> 
+                <button class="absolute top-0 right-0 rounded-l-none btn btn-primary" onclick="this.className='absolute top-0 right-0 rounded-l-none btn btn-warning'">go</button>
+                </div>
+            </div>
+
+        <!-- Guide -->
+            <div tabindex="0" class="collapse w-auto border rounded-box border-base-300 collapse-arrow mt-5"> 
+                <div class="collapse-title text-s font-normal">
+                Guide (Prompts & Note to mobile users)
+                </div> 
+                <div class="collapse-content"> 
+                    <p><span class="badge badge-outline">Showing</span>, not just <span class="badge badge-outline">telling</span>, is the secret to a good prompt. Even people familiar with machine learning accustomed to chatbots and single-purpose text models can get confused by this. The API’s power is its adaptability. The key to unlocking this adaptability is in learning how to show it what you want.
+
+                The API tries to guess what you want from the prompt. If you send it the words “Give me a list of numbers,” the <span class="badge badge-outline">AI (GPT-J-6B)</span>, wouldn’t automatically assume that you’re asking for a list of numebrs. You could just as easily be asking the API to continue a conversation where the first words are “Give me a list of numbers and the next ones are “and ensure they are miltiples of 2.” If the API only assumed that you wanted a list of numbers it wouldn’t be as good at <span class="badge badge-outline">classification</span> or <span class="badge badge-outline">code generation</span>
+                    </p> <br>
+
+                    <h1><strong>Keep it simple:</strong></h1>
+                    <p>Divide A by B and store it in result <br>Generate the sine values from 0 to 1. <br>Convert input from Celcius to Farenheit <br>Perform a google search of what the user wants and print the top result <br>Print what part of the day is going on right now <br>Make a password generator <br></p>
+                </div>
+            </div> 
+
+            <!-- Output add class bg-primary when has output -->
+            <div tabindex="0" class="{{ outputColour }} collapse w-auto border rounded-box border-base-300 collapse-arrow mt-5 "> 
+                <div class="collapse-title text-s font-normal">
+                Output
+                <progress class="progress progress-primary" value="0" max="100"></progress>
+                </div> 
+                <div class="collapse-content"> 
+                    
+                    <p>Your input values were (they default if not entered correctly): <br>
+                        <span class="badge badge-outline">Max Tokens: {{ maxTokens }}</span> <br> 
+                        <span class="badge badge-outline">Temperature: {{ temperature }}</span> <br>
+                        <span class="badge badge-outline">Probability: {{ probability }}</span> <br>
+                    </p> <br>
+
+                    {% if response != false %}
+                        {% block content %}
+
+                            <div class="mockup-code text-left">
+                                    {% for item in response %}
+                                    <code class="px-5 justify-start justify-self-start" >{{ item }}</code><br>
+                                    {% endfor %}
+                            </div>
+                            
+                        {% endblock content %}
+                    {% endif %}
+                </div>
+            </div> 
+
+
+        </div>
+    </form>
+
+    
+
+    
+    <script type="text/javascript" src="https://res.cloudinary.com/veseylab/raw/upload/v1613706377/magicmouse/magic_mouse-1.1.js"></script>
+    <script type="text/javascript">
+    
+        options = {
+        "cursorOuter": "circle-basic",
+        "hoverEffect": "circle-move",
+        "hoverItemMove": false,
+        "defaultCursor": false,
+        "outerWidth": 30,
+        "outerHeight": 30
+          };
+        magicMouse(options);
+    </script>
+</body>
+</html>
