@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>PyOoshi</title>
     <link rel="stylesheet" href="https://res.cloudinary.com/veseylab/raw/upload/v1613706377/magicmouse/magic-mouse-1.1.css" />
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1/dist/tailwind.min.css" rel="stylesheet" type="text/css" />
     <link href="https://cdn.jsdelivr.net/npm/daisyui@1.11.0/dist/full.css" rel="stylesheet" type="text/css" />
@@ -41,7 +41,7 @@
                 <!-- Question Mark Button -->
                 <a href="/#my-modal" class="btn btn-square btn-ghost magic-hover">?</a> 
                 <div id="my-modal" class="modal">
-                <div class="modal-box">
+                <div class="modal-box" style="max-height: calc(100vh - 210px); overflow-y: auto;">
                     <h1 class="text-xl font-bold">Help</h1>
                     <br>
                     <h1 class="text-lg font-semibold">Prompt</h1>
@@ -73,7 +73,7 @@
 
 
                     <div class="modal-action">
-                    <a href="/" class="btn btn-primary">Read Blog Post</a> 
+                    <a href="https://ooshimus.com/introducing-pyooshi-powerful-experimental-code-generator" class="btn btn-primary">Read Blog Post</a> 
                     <a href="/" class="btn">Ok</a>
                     </div>
                 </div>
@@ -94,7 +94,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="w-6 h-6 mx-2 stroke-current"> 
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>                         
             </svg> 
-            <label>I'm still in beta, if you have feedback please comment <a target="_blank" href="https://ooshimus.com" class="link link-accent magic-hover magic-hover__square">here!</a></label>
+            <label>I'm still in beta, if you have feedback please comment <a target="_blank" href="https://ooshimus.com/introducing-pyooshi-powerful-experimental-code-generator" class="link link-accent magic-hover magic-hover__square">here!</a></label>
             </div>
         </div>
 
@@ -102,7 +102,7 @@
 
             
             <!-- Title-->
-            <h1 class="text-center text-2xl font-semibold p-8 md:p-16 lg:text-4xl 2xl:text-5xl">Python Code Generator v0.1</h1>
+            <h1 class="text-center text-2xl font-semibold p-8 md:p-16 lg:text-4xl 2xl:text-5xl">PyOoshi v0.1</h1>
             <!-- Form -->
             <div class="form-control">
                 <label class="label">
@@ -120,9 +120,10 @@
                 Guide (Prompts & Note to mobile users)
                 </div> 
                 <div class="collapse-content"> 
+                    <p><span class="badge badge-outline">This works best on desktop, the ui is still in the works for mobile.</span></p><br>
                     <p><span class="badge badge-outline">Showing</span>, not just <span class="badge badge-outline">telling</span>, is the secret to a good prompt. Even people familiar with machine learning accustomed to chatbots and single-purpose text models can get confused by this. The API’s power is its adaptability. The key to unlocking this adaptability is in learning how to show it what you want.
 
-                The API tries to guess what you want from the prompt. If you send it the words “Give me a list of numbers,” the <span class="badge badge-outline">AI (GPT-J-6B)</span>, wouldn’t automatically assume that you’re asking for a list of numebrs. You could just as easily be asking the API to continue a conversation where the first words are “Give me a list of numbers and the next ones are “and ensure they are miltiples of 2.” If the API only assumed that you wanted a list of numbers it wouldn’t be as good at <span class="badge badge-outline">classification</span> or <span class="badge badge-outline">code generation</span>
+                The API tries to guess what you want from the prompt. If type the words “Give me a list of numbers,” the AI<span class="badge badge-outline"> (GPT-J-6B)</span>, wouldn’t automatically assume that you’re asking for a list of numbers. You could just as easily be asking the API to continue a conversation where the first words are “Give me a list of numbers and ensure they are miltiples of 2.” If the API only assumed that you wanted a list of numbers it wouldn’t be as good at <span class="badge badge-outline">classification</span> or <span class="badge badge-outline">code generation</span>
                     </p> <br>
 
                     <h1><strong>Keep it simple:</strong></h1>
